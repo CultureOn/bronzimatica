@@ -67,9 +67,27 @@ a{color:#F9B44B}a:hover{color:#FFFFFF}
           <a href="#contact" class="bz-ghost" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; font-size: 16px; font-weight: 700; color: #DDF0FD; text-decoration: none; border: 2px solid rgba(221,240,253,0.5)">Talk to our team</a>
         </div>
       </div>
-      <div style="flex: 1 1 420px; min-width: 0; position: relative; display: flex; justify-content: center">
-        <div aria-hidden="true" style="position: absolute; inset: 8% 4% 4% 4%; border-radius: 32px; background: radial-gradient(circle at 50% 45%, rgba(249,180,75,0.22), rgba(234,86,63,0.08) 45%, rgba(12,27,58,0) 72%)"></div>
-        <img src="assets/unit-40-12.png" alt="The Bronzimática Unit 40-12, a skid-mounted CO₂ / R290 thermal system" style="position: relative; width: 100%; max-width: 500px; height: auto; display: block; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.45))">
+      <div style="flex: 1 1 520px; min-width: 0; position: relative; padding-bottom: 32px">
+        <div aria-hidden="true" style="position: absolute; inset: 6% 0% 8% 22%; border-radius: 32px; background: radial-gradient(circle at 50% 45%, rgba(249,180,75,0.22), rgba(234,86,63,0.08) 45%, rgba(12,27,58,0) 72%)"></div>
+        <img src="assets/unit-40-12.png" alt="The Bronzimática Unit 40-12, a skid-mounted CO₂ / R290 thermal system" style="position: relative; width: 82%; max-width: 500px; height: auto; display: block; margin-left: auto; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.45))">
+        <div style="position: absolute; left: 0; bottom: 0; width: clamp(140px, 36%, 220px); z-index: 2">
+          <div style="position: relative; border-radius: 38px; padding: 9px; background: linear-gradient(145deg, #3A4052, #12151D); box-shadow: 0 30px 60px rgba(0,0,0,0.55), inset 0 0 0 2px #4A5166">
+            <span aria-hidden="true" style="position: absolute; left: -3px; top: 22%; width: 3px; height: 9%; border-radius: 2px; background: #3A4052"></span>
+            <span aria-hidden="true" style="position: absolute; left: -3px; top: 34%; width: 3px; height: 9%; border-radius: 2px; background: #3A4052"></span>
+            <span aria-hidden="true" style="position: absolute; right: -3px; top: 28%; width: 3px; height: 14%; border-radius: 2px; background: #3A4052"></span>
+            <div style="position: relative; border-radius: 30px; overflow: hidden; aspect-ratio: 9 / 19; background: #000000">
+              <video id="bz-hero-video" src="assets/unit-40-12-video.mp4" poster="assets/unit-40-12-cover.jpg" playsinline="playsinline" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video>
+              <span aria-hidden="true" style="position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 34%; height: 20px; border-radius: 999px; background: #000000; z-index: 3; pointer-events: none"></span>
+              <button type="button" id="bz-hero-play" aria-label="Play the Unit 40-12 presentation video" style="position: absolute; inset: 0; z-index: 2; border: 0; margin: 0; padding: 0 0 26px; cursor: pointer; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 10px; background: linear-gradient(to top, rgba(12,27,58,0.85), rgba(12,27,58,0.1) 55%, rgba(12,27,58,0)); font-family: 'Montserrat', system-ui, sans-serif; color: #FFFFFF">
+                  <span style="width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid transparent; background: linear-gradient(#FFFFFF,#FFFFFF) padding-box, linear-gradient(90deg,#EA563F,#F9B44B,#6D5FD3) border-box; box-shadow: 0 8px 24px rgba(0,0,0,0.35)">
+                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#0C1B3A"><path d="M8 5.5v13l11-6.5z"></path></svg>
+                  </span>
+                  <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em">Watch the video</span>
+                  <span style="font-size: 11px; font-weight: 600; color: #F9B44B; letter-spacing: 0.12em; text-transform: uppercase">1 min</span>
+                </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div style="background: #DDF0FD; color: #0C1B3A">
@@ -314,5 +332,11 @@ a{color:#F9B44B}a:hover{color:#FFFFFF}
   </footer>
 
 </div>
+<script>
+(function(){var v=document.getElementById('bz-hero-video'),b=document.getElementById('bz-hero-play');
+function start(){b.style.display='none';v.controls=true;}
+b.addEventListener('click',function(){start();var p=v.play();if(p&&p.catch)p.catch(function(){});});
+v.addEventListener('play',start);})();
+</script>
 </body>
 </html>
