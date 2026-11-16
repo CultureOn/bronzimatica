@@ -26,13 +26,15 @@ a{color:#F9B44B}a:hover{color:#FFFFFF}
 .bz-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(12,27,58,.16)}
 .bz-contact a{color:#FFFFFF;text-decoration:none}
 .bz-contact a:hover{color:#F9B44B}
+.bz-mobilemenu{display:none}
 @media (max-width: 640px){
-.bz-topnav{flex-wrap:nowrap !important;padding:14px 3.6vw !important;column-gap:2vw !important}
-.bz-logo{height:6.2vw !important}
-.bz-links{gap:2.2vw !important;font-size:2.7vw !important;white-space:nowrap}
-.bz-ctawrap{margin-left:0}
-.bz-cta{padding:1.7vw 2.9vw !important;font-size:2.7vw !important;white-space:nowrap}
+.bz-topnav{flex-wrap:nowrap !important;padding:14px 20px !important}
+.bz-logo{height:38px !important}
+.bz-links,.bz-ctawrap{display:none !important}
+.bz-burger{display:flex !important}
+.bz-mobilemenu{display:block}
 }
+.bz-mobilemenu[hidden]{display:none !important}
 </style>
 
 <style>html{scroll-behavior:smooth}</style>
@@ -55,7 +57,18 @@ a{color:#F9B44B}a:hover{color:#FFFFFF}
       <div class="bz-ctawrap" style="display: flex; font-size: 15px; font-weight: 600">
         <a href="#contact" class="bz-pill bz-cta" style="color: #0C1B3A; background: #FFFFFF; padding: 12px 22px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#FFFFFF,#FFFFFF) padding-box, linear-gradient(90deg,#EA563F,#F9B44B,#6D5FD3) border-box">Let’s talk</a>
       </div>
+    <button type="button" class="bz-burger" id="bz-burger" aria-expanded="false" aria-controls="bz-mobilemenu" aria-label="Open menu" style="display: none; margin-left: auto; width: 46px; height: 46px; border-radius: 12px; border: 1px solid rgba(221,240,253,0.3); background: transparent; color: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; padding: 0">
+        <span class="bz-ic-open"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></span><span class="bz-ic-close" hidden><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></span>
+      </button>
     </nav>
+      <div id="bz-mobilemenu" class="bz-mobilemenu" hidden style="border-top: 1px solid rgba(221,240,253,0.12); padding: 8px 20px 24px">
+      <nav aria-label="Mobile" style="display: flex; flex-direction: column">
+        <a href="#expertise" style="display: block; padding: 16px 0; font-size: 18px; font-weight: 600; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(221,240,253,0.12)">Expertise</a>
+        <a href="#services" style="display: block; padding: 16px 0; font-size: 18px; font-weight: 600; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(221,240,253,0.12)">Services</a>
+        <a href="#unit" style="display: block; padding: 16px 0; font-size: 18px; font-weight: 600; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(221,240,253,0.12)">The Unit 40-12</a>
+      </nav>
+      <a href="#contact" class="bz-pill" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 999px; font-size: 16px; font-weight: 700; color: #0C1B3A; text-decoration: none; border: 2px solid transparent; background: linear-gradient(#FFFFFF,#FFFFFF) padding-box, linear-gradient(90deg,#EA563F,#F9B44B,#6D5FD3) border-box">Let’s talk</a>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -346,6 +359,12 @@ a{color:#F9B44B}a:hover{color:#FFFFFF}
 function start(){b.style.display='none';v.controls=true;}
 b.addEventListener('click',function(){start();var p=v.play();if(p&&p.catch)p.catch(function(){});});
 v.addEventListener('play',start);})();
+</script>
+<script>
+(function(){var b=document.getElementById('bz-burger'),m=document.getElementById('bz-mobilemenu'),o=b.querySelector('.bz-ic-open'),c=b.querySelector('.bz-ic-close');
+function set(open){m.hidden=!open;o.hidden=open;c.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');b.setAttribute('aria-label',open?'Close menu':'Open menu');}
+b.addEventListener('click',function(){set(m.hidden);});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
 </body>
 </html>
